@@ -14,12 +14,9 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Button
 import androidx.compose.material3.Checkbox
-import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
-import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
-import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateListOf
@@ -31,6 +28,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 
 import com.example.test.ui.theme.TestTheme
 
@@ -52,7 +50,6 @@ class TaskListActivity : ComponentActivity() {
     }
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun TaskListScreen() {
     var nextId by remember { mutableStateOf(4) }
@@ -67,67 +64,68 @@ fun TaskListScreen() {
 
     val completedCount = tasks.count { it.completed }
 
-    Scaffold(
-        topBar = {
-            TopAppBar(
-                title = { Text("课程学习任务") }
-            )
-        }
-    ) { innerPadding ->
-        Column(
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(16.dp)
+    ) {
+        // 标题（不用 TopAppBar，PDF 原图是白底普通标题）
+        Text(
+            text = "课程学习任务",
+            style = TextStyle(
+                fontSize = 22.sp,
+                fontWeight = androidx.compose.ui.text.font.FontWeight.Bold
+            ),
+            modifier = Modifier.padding(bottom = 8.dp)
+        )
+
+        // 已完成计数
+        Text(
+            text = "已完成: $completedCount / ${tasks.size}",
+            style = TextStyle(fontSize = 14.sp),
+            modifier = Modifier.padding(bottom = 12.dp)
+        )
+
+        // 输入框 + 添加按钮
+        Row(
+            verticalAlignment = Alignment.CenterVertically,
             modifier = Modifier
-                .fillMaxSize()
-                .padding(innerPadding)
-                .padding(16.dp)
+                .fillMaxWidth()
+                .padding(bottom = 16.dp)
         ) {
-            Text(
-                text = "已完成: $completedCount / ${tasks.size}",
-                style = MaterialTheme.typography.titleMedium,
-                modifier = Modifier.padding(bottom = 12.dp)
+            OutlinedTextField(
+                value = inputText,
+                onValueChange = { inputText = it },
+                placeholder = { Text("输入新任务...") },
+                modifier = Modifier.weight(1f)
             )
-
-            Row(
-                verticalAlignment = Alignment.CenterVertically,
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(bottom = 16.dp)
+            Button(
+                onClick = {
+                    if (inputText.isNotBlank()) {
+                        tasks.add(Task(nextId++, inputText.trim()))
+                        inputText = ""
+                    }
+                },
+                modifier = Modifier.padding(start = 8.dp)
             ) {
-                OutlinedTextField(
-                    value = inputText,
-                    onValueChange = { inputText = it },
-                    placeholder = { Text("输入新任务...") },
-                    modifier = Modifier.weight(1f)
-                )
-                Button(
-                    onClick = {
-                        if (inputText.isNotBlank()) {
-                            tasks.add(Task(nextId++, inputText.trim()))
-                            inputText = ""
-                        }
-                    },
-                    modifier = Modifier.padding(start = 8.dp)
-                ) {
-                    Text("添加")
-                }
+                Text("添加")
             }
+        }
 
-            LazyColumn(
-                verticalArrangement = Arrangement.spacedBy(8.dp)
-            ) {
-                items(tasks) { task ->
-                    TaskItem(
-                        task = task,
-                        onCheckedChange = { checked ->
-                            val index = tasks.indexOfFirst { it.id == task.id }
-                            if (index >= 0) {
-                                tasks[index] = tasks[index].copy(completed = checked)
-                            }
-                        },
-                        onDelete = {
-                            tasks.removeAll { it.id == task.id }
+        // 任务列表
+        LazyColumn(
+            verticalArrangement = Arrangement.spacedBy(8.dp)
+        ) {
+            items(tasks) { task ->
+                TaskItem(
+                    task = task,
+                    onCheckedChange = { checked ->
+                        val index = tasks.indexOfFirst { it.id == task.id }
+                        if (index >= 0) {
+                            tasks[index] = tasks[index].copy(completed = checked)
                         }
-                    )
-                }
+                    }
+                )
             }
         }
     }
@@ -136,8 +134,7 @@ fun TaskListScreen() {
 @Composable
 fun TaskItem(
     task: Task,
-    onCheckedChange: (Boolean) -> Unit,
-    onDelete: () -> Unit
+    onCheckedChange: (Boolean) -> Unit
 ) {
     Row(
         verticalAlignment = Alignment.CenterVertically,
@@ -150,16 +147,14 @@ fun TaskItem(
         Text(
             text = task.text,
             style = TextStyle(
-                textDecoration = if (task.completed) TextDecoration.LineThrough else TextDecoration.None
+                fontSize = 16.sp,
+                textDecoration = if (task.completed) TextDecoration.LineThrough else TextDecoration.None,
+                color = if (task.completed) MaterialTheme.colorScheme.onSurface.copy(alpha = 0.6f)
+                        else MaterialTheme.colorScheme.onSurface
             ),
             modifier = Modifier
                 .weight(1f)
-                .padding(horizontal = 8.dp)
+                .padding(start = 4.dp)
         )
-        Button(
-            onClick = onDelete
-        ) {
-            Text("删除")
-        }
     }
 }
