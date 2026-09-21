@@ -26,26 +26,31 @@
 
         <activity
             android:name=".LinearLayoutActivity"
+            android:exported="true"
             android:label="线性布局"
             android:theme="@style/Theme.Test" />
 
         <activity
             android:name=".TableLayoutActivity"
+            android:exported="true"
             android:label="表格布局"
             android:theme="@style/Theme.Test" />
 
         <activity
             android:name=".CalculatorActivity"
+            android:exported="true"
             android:label="计算器"
             android:theme="@style/Theme.Test" />
 
         <activity
             android:name=".SpaceTravelActivity"
+            android:exported="true"
             android:label="太空旅行"
             android:theme="@style/Theme.Test" />
 
         <activity
             android:name=".TaskListActivity"
+            android:exported="true"
             android:label="Compose任务列表"
             android:theme="@style/Theme.Test"
             android:windowSoftInputMode="adjustResize" />
