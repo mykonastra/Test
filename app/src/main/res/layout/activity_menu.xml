@@ -7,20 +7,10 @@
     android:padding="24dp">
 
     <TextView
+        android:id="@+id/tvContent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="长按下方文字打开上下文菜单"
-        android:textSize="16sp"
-        android:layout_marginBottom="24dp" />
-
-    <TextView
-        android:id="@+id/tvContext"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="长按我试试"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:padding="16dp"
-        android:background="#EEEEEE" />
+        android:text="用于测试菜单的内容"
+        android:textSize="16sp" />
 
 </LinearLayout>

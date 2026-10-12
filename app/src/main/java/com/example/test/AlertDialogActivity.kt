@@ -27,19 +27,18 @@ class AlertDialogActivity : Activity() {
         val etPassword = dialogView.findViewById<EditText>(R.id.etPassword)
 
         AlertDialog.Builder(this)
-            .setTitle("用户登录")
-            .setIcon(R.mipmap.ic_launcher)
+            .setTitle("ANDROID APP")
             .setView(dialogView)  // 设置自定义视图
-            .setPositiveButton("登录") { _, _ ->
+            .setPositiveButton("Sign in") { _, _ ->
                 val username = etUsername.text.toString()
                 val password = etPassword.text.toString()
                 Toast.makeText(
                     this,
-                    "用户名：$username\n密码：$password",
+                    "Username：$username\nPassword：$password",
                     Toast.LENGTH_SHORT
                 ).show()
             }
-            .setNegativeButton("取消", null)
+            .setNegativeButton("Cancel", null)
             .setCancelable(true)
             .show()
     }

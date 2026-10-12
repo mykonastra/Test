@@ -9,7 +9,7 @@
         android:id="@+id/etUsername"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="用户名"
+        android:hint="Username"
         android:inputType="text" />
 
     <EditText
@@ -17,7 +17,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:hint="密码"
+        android:hint="Password"
         android:inputType="textPassword" />
 
 </LinearLayout>

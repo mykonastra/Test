@@ -1,23 +1,33 @@
 package com.example.test
 
 import android.app.Activity
+import android.content.Context
+import android.graphics.Color
 import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.BaseAdapter
+import android.widget.ImageView
 import android.widget.ListView
-import android.widget.SimpleAdapter
+import android.widget.TextView
 import android.widget.Toast
 
 class ListViewActivity : Activity() {
 
     private val animals = arrayOf(
-        Animal("猫", R.drawable.cat),
-        Animal("狗", R.drawable.dog),
-        Animal("大象", R.drawable.elephant),
-        Animal("狮子", R.drawable.lion),
-        Animal("猴子", R.drawable.monkey),
-        Animal("老虎", R.drawable.tiger)
+        Animal("Lion", R.drawable.lion),
+        Animal("Tiger", R.drawable.tiger),
+        Animal("Monkey", R.drawable.monkey),
+        Animal("Dog", R.drawable.dog),
+        Animal("Cat", R.drawable.cat),
+        Animal("Elephant", R.drawable.elephant)
     )
 
     data class Animal(val name: String, val icon: Int)
+
+    // 记录当前选中的位置，-1 表示未选中
+    private var selectedPosition = -1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,29 +35,42 @@ class ListViewActivity : Activity() {
         actionBar?.title = "1. ListView + SimpleAdapter"
 
         val listView = findViewById<ListView>(R.id.listView)
-
-        // 构造数据列表
-        val data = ArrayList<Map<String, Any>>()
-        for (animal in animals) {
-            val map = HashMap<String, Any>()
-            map["icon"] = animal.icon
-            map["title"] = animal.name
-            data.add(map)
-        }
-
-        // SimpleAdapter 参数：上下文、数据、item布局、键数组、视图id数组
-        val adapter = SimpleAdapter(
-            this,
-            data,
-            R.layout.item_animal,
-            arrayOf("icon", "title"),
-            intArrayOf(R.id.icon, R.id.title)
-        )
+        val adapter = AnimalAdapter(this, animals)
         listView.adapter = adapter
 
-        // 点击列表项弹出 Toast
         listView.setOnItemClickListener { _, _, position, _ ->
+            // 更新选中位置
+            selectedPosition = position
+            adapter.notifyDataSetChanged()
             Toast.makeText(this, "你点击了：${animals[position].name}", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    inner class AnimalAdapter(
+        private val context: Context,
+        private val data: Array<Animal>
+    ) : BaseAdapter() {
+
+        override fun getCount() = data.size
+        override fun getItem(position: Int) = data[position]
+        override fun getItemId(position: Int) = position.toLong()
+
+        override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
+            val view = convertView ?: LayoutInflater.from(context)
+                .inflate(R.layout.item_animal, parent, false)
+
+            val animal = data[position]
+            view.findViewById<TextView>(R.id.title).text = animal.name
+            view.findViewById<ImageView>(R.id.icon).setImageResource(animal.icon)
+
+            // 根据选中状态设置背景颜色
+            if (position == selectedPosition) {
+                view.setBackgroundColor(Color.parseColor("#FF4444"))
+            } else {
+                view.setBackgroundColor(Color.WHITE)
+            }
+
+            return view
         }
     }
 }
