@@ -4,7 +4,19 @@
     <item
         android:id="@+id/menu_font_size"
         android:title="字体大小"
-        android:orderInCategory="1" />
+        android:orderInCategory="1">
+        <menu>
+            <item
+                android:id="@+id/font_size_10"
+                android:title="10sp" />
+            <item
+                android:id="@+id/font_size_16"
+                android:title="16sp" />
+            <item
+                android:id="@+id/font_size_20"
+                android:title="20sp" />
+        </menu>
+    </item>
 
     <item
         android:id="@+id/menu_normal"
@@ -14,6 +26,18 @@
     <item
         android:id="@+id/menu_font_color"
         android:title="字体颜色"
-        android:orderInCategory="3" />
+        android:orderInCategory="3">
+        <menu>
+            <item
+                android:id="@+id/font_color_black"
+                android:title="黑色" />
+            <item
+                android:id="@+id/font_color_red"
+                android:title="红色" />
+            <item
+                android:id="@+id/font_color_blue"
+                android:title="蓝色" />
+        </menu>
+    </item>
 
 </menu>
