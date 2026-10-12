@@ -54,6 +54,36 @@
             android:label="Compose任务列表"
             android:theme="@style/Theme.Test"
             android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".ListViewActivity"
+            android:exported="true"
+            android:label="ListView"
+            android:theme="@style/Theme.Test.ActionBar" />
+
+        <activity
+            android:name=".AlertDialogActivity"
+            android:exported="true"
+            android:label="AlertDialog"
+            android:theme="@style/Theme.Test.ActionBar" />
+
+        <activity
+            android:name=".MenuActivity"
+            android:exported="true"
+            android:label="XML菜单"
+            android:theme="@style/Theme.Test.ActionBar" />
+
+        <activity
+            android:name=".ActionModeActivity"
+            android:exported="true"
+            android:label="ActionMode"
+            android:theme="@style/Theme.Test.ActionBar" />
+
+        <activity
+            android:name=".RecyclerViewActivity"
+            android:exported="true"
+            android:label="RecyclerView"
+            android:theme="@style/Theme.Test.ActionBar" />
     </application>
 
 </manifest>

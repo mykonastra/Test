@@ -2,4 +2,7 @@
 <resources>
 
     <style name="Theme.Test" parent="android:Theme.Material.Light.NoActionBar" />
+
+    <!-- 带 ActionBar 的主题，用于需要选项菜单的 Activity -->
+    <style name="Theme.Test.ActionBar" parent="android:Theme.Material.Light" />
 </resources>

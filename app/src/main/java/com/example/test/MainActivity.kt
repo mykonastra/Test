@@ -59,10 +59,10 @@ fun MainScreen() {
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Text(
-                text = "选择实验项目",
-                style = MaterialTheme.typography.headlineSmall
+                text = "实验2 Android界面布局",
+                style = MaterialTheme.typography.titleMedium
             )
-            Spacer(modifier = Modifier.height(8.dp))
+            Spacer(modifier = Modifier.height(4.dp))
 
             Button(
                 onClick = {
@@ -107,6 +107,58 @@ fun MainScreen() {
                 modifier = Modifier.fillMaxWidth()
             ) {
                 Text("5. Compose 任务列表")
+            }
+
+            Spacer(modifier = Modifier.height(16.dp))
+            Text(
+                text = "实验3 Android界面组件",
+                style = MaterialTheme.typography.titleMedium
+            )
+            Spacer(modifier = Modifier.height(4.dp))
+
+            Button(
+                onClick = {
+                    context.startActivity(Intent(context, ListViewActivity::class.java))
+                },
+                modifier = Modifier.fillMaxWidth()
+            ) {
+                Text("1. ListView + SimpleAdapter")
+            }
+
+            Button(
+                onClick = {
+                    context.startActivity(Intent(context, AlertDialogActivity::class.java))
+                },
+                modifier = Modifier.fillMaxWidth()
+            ) {
+                Text("2. AlertDialog (setView)")
+            }
+
+            Button(
+                onClick = {
+                    context.startActivity(Intent(context, MenuActivity::class.java))
+                },
+                modifier = Modifier.fillMaxWidth()
+            ) {
+                Text("3. XML 菜单 (OptionsMenu + ContextMenu)")
+            }
+
+            Button(
+                onClick = {
+                    context.startActivity(Intent(context, ActionModeActivity::class.java))
+                },
+                modifier = Modifier.fillMaxWidth()
+            ) {
+                Text("4. ActionMode (多选)")
+            }
+
+            Button(
+                onClick = {
+                    context.startActivity(Intent(context, RecyclerViewActivity::class.java))
+                },
+                modifier = Modifier.fillMaxWidth()
+            ) {
+                Text("5. RecyclerView + CardView")
             }
         }
     }
