@@ -4,10 +4,10 @@
     android:layout_height="wrap_content"
     android:orientation="horizontal"
     android:gravity="center_vertical"
-    android:padding="16dp"
-    android:background="@drawable/item_action_mode_selector">
+    android:padding="16dp">
 
     <ImageView
+        android:id="@android:id/icon"
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:src="@android:drawable/sym_def_app_icon"

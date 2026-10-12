@@ -89,6 +89,8 @@ class RecyclerViewActivity : Activity() {
             val name = etNewItem.text.toString().trim()
             if (name.isNotEmpty()) {
                 adapter.addItem(AnimalCard(name, "新添加的列表项", R.drawable.cat))
+                // 立即滚动到新添加的项
+                recyclerView.scrollToPosition(adapter.itemCount - 1)
                 etNewItem.text.clear()
                 Toast.makeText(this, "已添加：$name", Toast.LENGTH_SHORT).show()
             } else {
