@@ -29,4 +29,4 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "AndroidCourseExperiments"
-include(":experiment02", ":experiment03")
+include(":experiment02", ":experiment03", ":midterm-notepad")

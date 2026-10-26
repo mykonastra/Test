@@ -1,0 +1,20 @@
+<resources>
+    <item name="search" type="id" />
+    <item name="notes_list" type="id" />
+    <item name="add_note" type="id" />
+    <item name="settings" type="id" />
+    <item name="category_filter" type="id" />
+    <item name="status_filter" type="id" />
+    <item name="sort_order" type="id" />
+    <item name="note_title" type="id" />
+    <item name="note_body" type="id" />
+    <item name="note_category" type="id" />
+    <item name="note_todo" type="id" />
+    <item name="note_done" type="id" />
+    <item name="save_note" type="id" />
+    <item name="delete_note" type="id" />
+    <item name="export_note" type="id" />
+    <item name="theme_choice" type="id" />
+    <item name="font_choice" type="id" />
+    <item name="result_count" type="id" />
+</resources>

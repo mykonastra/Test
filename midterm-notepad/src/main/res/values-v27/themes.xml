@@ -1,0 +1,8 @@
+<resources>
+    <style name="Theme.NotePad" parent="Theme.NotePad.Base">
+        <item name="android:windowLightNavigationBar">true</item>
+    </style>
+    <style name="Theme.NotePad.Dark" parent="Theme.NotePad.DarkBase">
+        <item name="android:windowLightNavigationBar">false</item>
+    </style>
+</resources>

@@ -1,0 +1,98 @@
+> Task :midterm-notepad:preBuild UP-TO-DATE
+> Task :midterm-notepad:preDebugBuild UP-TO-DATE
+> Task :midterm-notepad:mergeDebugNativeDebugMetadata NO-SOURCE
+> Task :midterm-notepad:generateDebugResources
+> Task :midterm-notepad:packageDebugResources
+> Task :midterm-notepad:processDebugNavigationResources
+> Task :midterm-notepad:generateDebugAssets UP-TO-DATE
+> Task :midterm-notepad:javaPreCompileDebug
+> Task :midterm-notepad:mergeDebugAssets
+> Task :midterm-notepad:compressDebugAssets
+> Task :midterm-notepad:parseDebugLocalResources
+> Task :midterm-notepad:generateDebugGlobalSynthetics
+> Task :midterm-notepad:desugarDebugFileDependencies
+> Task :midterm-notepad:checkDebugDuplicateClasses
+> Task :midterm-notepad:checkDebugAarMetadata
+> Task :midterm-notepad:mapDebugSourceSetPaths
+> Task :midterm-notepad:generateDebugRFile
+> Task :midterm-notepad:compileDebugKotlin NO-SOURCE
+> Task :midterm-notepad:mergeExtDexDebug
+
+> Task :midterm-notepad:compileDebugJavaWithJavac
+注: 某些输入文件使用或覆盖了已过时的 API。
+注: 有关详细信息, 请使用 -Xlint:deprecation 重新编译。
+
+> Task :midterm-notepad:processDebugJavaRes NO-SOURCE
+> Task :midterm-notepad:mergeLibDexDebug
+> Task :midterm-notepad:compileDebugNavigationResources
+> Task :midterm-notepad:createDebugCompatibleScreenManifests
+> Task :midterm-notepad:extractDeepLinksDebug
+> Task :midterm-notepad:mergeDebugJavaResource
+> Task :midterm-notepad:processDebugMainManifest
+> Task :midterm-notepad:processDebugManifest
+> Task :midterm-notepad:mergeDebugJniLibFolders
+> Task :midterm-notepad:mergeDebugNativeLibs NO-SOURCE
+> Task :midterm-notepad:stripDebugDebugSymbols NO-SOURCE
+> Task :midterm-notepad:validateSigningDebug
+> Task :midterm-notepad:writeDebugAppMetadata
+> Task :midterm-notepad:mergeDebugResources
+> Task :midterm-notepad:writeDebugSigningConfigVersions
+> Task :midterm-notepad:preDebugAndroidTestBuild SKIPPED
+> Task :midterm-notepad:generateDebugAndroidTestResources
+> Task :midterm-notepad:packageDebugAndroidTestResources
+> Task :midterm-notepad:processDebugAndroidTestNavigationResources
+> Task :midterm-notepad:generateDebugAndroidTestAssets UP-TO-DATE
+> Task :midterm-notepad:javaPreCompileDebugAndroidTest
+> Task :midterm-notepad:parseDebugAndroidTestLocalResources
+> Task :midterm-notepad:mergeDebugAndroidTestAssets
+> Task :midterm-notepad:generateDebugAndroidTestRFile
+> Task :midterm-notepad:processDebugManifestForPackage
+> Task :midterm-notepad:compressDebugAndroidTestAssets
+> Task :midterm-notepad:generateDebugAndroidTestGlobalSynthetics
+> Task :midterm-notepad:checkDebugAndroidTestDuplicateClasses
+> Task :midterm-notepad:desugarDebugAndroidTestFileDependencies
+> Task :midterm-notepad:mergeExtDexDebugAndroidTest
+> Task :midterm-notepad:checkDebugAndroidTestAarMetadata
+> Task :midterm-notepad:mapDebugAndroidTestSourceSetPaths
+> Task :midterm-notepad:compileDebugAndroidTestNavigationResources
+> Task :midterm-notepad:mergeLibDexDebugAndroidTest
+> Task :midterm-notepad:mergeDebugAndroidTestResources
+> Task :midterm-notepad:mergeDebugAndroidTestManifest
+> Task :midterm-notepad:processDebugAndroidTestManifest
+> Task :midterm-notepad:mergeDebugAndroidTestJniLibFolders
+> Task :midterm-notepad:mergeDebugAndroidTestNativeLibs NO-SOURCE
+> Task :midterm-notepad:stripDebugAndroidTestDebugSymbols NO-SOURCE
+> Task :midterm-notepad:validateSigningDebugAndroidTest
+> Task :midterm-notepad:writeDebugAndroidTestSigningConfigVersions
+> Task :midterm-notepad:extractProguardFiles
+> Task :midterm-notepad:generateDebugLintReportModel
+> Task :midterm-notepad:preDebugUnitTestBuild UP-TO-DATE
+> Task :midterm-notepad:processDebugAndroidTestResources
+> Task :midterm-notepad:processDebugResources
+> Task :midterm-notepad:dexBuilderDebug
+> Task :midterm-notepad:bundleDebugClassesToCompileJar
+> Task :midterm-notepad:compileDebugAndroidTestKotlin NO-SOURCE
+> Task :midterm-notepad:mergeProjectDexDebug
+> Task :midterm-notepad:compileDebugAndroidTestJavaWithJavac
+> Task :midterm-notepad:processDebugAndroidTestJavaRes NO-SOURCE
+> Task :midterm-notepad:mergeDebugAndroidTestJavaResource
+> Task :midterm-notepad:dexBuilderDebugAndroidTest
+> Task :midterm-notepad:generateDebugAndroidTestLintModel
+> Task :midterm-notepad:mergeProjectDexDebugAndroidTest
+> Task :midterm-notepad:generateDebugUnitTestLintModel
+> Task :midterm-notepad:packageDebugAndroidTest
+> Task :midterm-notepad:createDebugAndroidTestApkListingFileRedirect
+> Task :midterm-notepad:assembleDebugAndroidTest
+> Task :midterm-notepad:lintAnalyzeDebug
+> Task :midterm-notepad:packageDebug
+> Task :midterm-notepad:createDebugApkListingFileRedirect
+> Task :midterm-notepad:assembleDebug
+> Task :midterm-notepad:lintAnalyzeDebugUnitTest
+> Task :midterm-notepad:lintAnalyzeDebugAndroidTest
+> Task :midterm-notepad:lintReportDebug
+> Task :midterm-notepad:lintDebug
+
+[Incubating] Problems report is available at: file:///D:/CodeTools/AndroidProject/1/build/reports/problems/problems-report.html
+
+BUILD SUCCESSFUL in 4s
+72 actionable tasks: 72 executed

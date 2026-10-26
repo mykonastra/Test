@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">拾记 NotePad</string>
+    <string name="word_count">%1$d 字</string>
+    <string name="note_count">共 %1$d 条笔记</string>
+    <string name="note_dates">创建 %1$s\n修改 %2$s</string>
+    <style name="Theme.NotePad" parent="Theme.NotePad.Base" />
+    <style name="Theme.NotePad.Base" parent="android:style/Theme.Material.Light.NoActionBar">
+        <item name="android:fontFamily">sans</item>
+        <item name="android:colorAccent">#176B54</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowActionModeOverlay">true</item>
+        <item name="android:windowSoftInputMode">adjustResize</item>
+    </style>
+    <style name="Theme.NotePad.Dark" parent="Theme.NotePad.DarkBase" />
+    <style name="Theme.NotePad.DarkBase" parent="android:style/Theme.Material.NoActionBar">
+        <item name="android:fontFamily">sans</item>
+        <item name="android:colorAccent">#8ED6B7</item>
+        <item name="android:windowActionModeOverlay">true</item>
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+</resources>

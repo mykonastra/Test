@@ -1,0 +1,16 @@
+拾记 NotePad — Android 课程期中实验
+
+Based on fjnu-cse/NotePad:
+https://github.com/fjnu-cse/NotePad
+Upstream commit: 9279eab943f50012dd299df3417259e3478c8364
+
+NotePad.java and NotePadProvider.java derive from the Android Open Source
+Project NotePad sample. Their original copyright and Apache 2.0 headers
+are retained. This module extends the contract, migrates the database
+without dropping rows, updates the provider and rewrites the UI.
+
+Copyright (C) 2007 The Android Open Source Project
+Licensed under the Apache License, Version 2.0. See LICENSE.
+
+This course module does not claim authorship of the upstream sample.
+See docs/SOURCE_ANALYSIS.md for the exact reuse and modification scope.

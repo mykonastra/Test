@@ -1,0 +1,43 @@
+PASS 01_create_read_and_timestamps
+PASS 02_update_keeps_creation_time
+PASS 03_title_and_content_search
+PASS 04_literal_and_injection_search
+PASS 05_combined_category_and_todo_filters
+PASS 06_all_sort_modes
+PASS 07_empty_and_invalid_input
+PASS 08_delete_and_missing_note
+PASS 09_database_reopen_persistence
+PASS 10_version2_to3_migration_keeps_data
+PASS 11_preferences_persist
+PASS 12_utf8_text_export
+PASS 13_provider_item_selection_is_scoped
+PASS 14_ui_create_save_search_edit
+PASS 15_ui_rotation_keeps_draft
+PASS 16_ui_category_and_todo
+PASS 17_ui_preferences_controls
+PASS 18_ui_discard_and_delete_confirmation
+PASS 19_system_document_export
+PASS 20_demo_and_screenshots
+
+PASS 01_create_read_and_timestamps
+PASS 02_update_keeps_creation_time
+PASS 03_title_and_content_search
+PASS 04_literal_and_injection_search
+PASS 05_combined_category_and_todo_filters
+PASS 06_all_sort_modes
+PASS 07_empty_and_invalid_input
+PASS 08_delete_and_missing_note
+PASS 09_database_reopen_persistence
+PASS 10_version2_to3_migration_keeps_data
+PASS 11_preferences_persist
+PASS 12_utf8_text_export
+PASS 13_provider_item_selection_is_scoped
+PASS 14_ui_create_save_search_edit
+PASS 15_ui_rotation_keeps_draft
+PASS 16_ui_category_and_todo
+PASS 17_ui_preferences_controls
+PASS 18_ui_discard_and_delete_confirmation
+PASS 19_system_document_export
+PASS 20_demo_and_screenshots
+
+RESULT: 20 passed, 0 failed
