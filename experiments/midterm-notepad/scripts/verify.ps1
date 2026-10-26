@@ -5,7 +5,7 @@ param(
     [switch]$Rebuild
 )
 $ErrorActionPreference = 'Stop'
-$repoRoot = [IO.Path]::GetFullPath((Join-Path $PSScriptRoot '../..'))
+$repoRoot = [IO.Path]::GetFullPath((Join-Path $PSScriptRoot '../../..'))
 Push-Location $repoRoot
 try {
     if (-not $SdkPath) { $SdkPath = $env:ANDROID_HOME }
@@ -34,7 +34,7 @@ try {
         if ($devices.Count -ne 1) { throw 'Connect one dedicated emulator, or pass -DeviceSerial.' }
         $DeviceSerial = $devices[0]
     }
-    foreach ($apk in @('midterm-notepad/build/outputs/apk/debug/midterm-notepad-debug.apk', 'midterm-notepad/build/outputs/apk/androidTest/debug/midterm-notepad-debug-androidTest.apk')) {
+    foreach ($apk in @('experiments/midterm-notepad/build/outputs/apk/debug/midterm-notepad-debug.apk', 'experiments/midterm-notepad/build/outputs/apk/androidTest/debug/midterm-notepad-debug-androidTest.apk')) {
         & $adb -s $DeviceSerial install -r $apk
         if ($LASTEXITCODE -ne 0) { throw "Install failed: $apk" }
     }

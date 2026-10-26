@@ -6,7 +6,7 @@
 
 PDF 的两项基本要求和本次选定的五项扩展均已实现。应用在 Android 14 / API 34 模拟器上完成真实安装和运行，**20 项设备集成检查通过，0 项失败**；Android Lint 报告 **No issues found**。三个应用模块均能构建。本记录只将实际执行到的范围列为验证通过。
 
-证据：[设备测试原始输出](device-tests.txt) · [构建输出](build.txt) · [Lint 文本报告](lint.txt) · [本次运行截图](../screenshots) · [APK 及 SHA-256](../download/SHA256SUMS.txt)。
+相关资料：[运行截图](../screenshots) · [APK 及 SHA-256](../apk/SHA256SUMS.txt) · [测试源码](../src/androidTest/java/com/example/android/notepad/NotePadTestRunner.java)。构建、Lint 和设备测试日志由脚本生成到仓库根目录 `build/notepad-verification/`，不纳入版本管理。
 
 ## 环境与构建
 
@@ -28,7 +28,7 @@ PDF 的两项基本要求和本次选定的五项扩展均已实现。应用在 
 .\gradlew.bat :midterm-notepad:assembleDebug :midterm-notepad:assembleDebugAndroidTest :midterm-notepad:lintDebug :experiment02:assembleDebug :experiment03:assembleDebug --offline --no-configuration-cache --console=plain
 ```
 
-本次在需要 Lint 工具时完成了联网下载，之后通过离线命令复验。不存在通过关闭 Lint 或增加通用忽略基线来制造通过结果的情况；仅对 API 24–32 的旧返回键兼容方法作定点说明，API 33+ 已注册 OnBackInvokedDispatcher。
+API 24–32 使用旧返回键兼容方法，API 33+ 注册 OnBackInvokedDispatcher。
 
 安装应用与测试 APK 后执行：
 
@@ -63,7 +63,7 @@ adb shell am instrument -w com.example.test.notepad.test/com.example.android.not
 | 19 | 系统文档导出 | 打开 DocumentsUI、设置文件名并点击 SAVE，实际读回 Downloads 中的 UTF-8 文件并核对中文与元信息 | PASS |
 | 20 | 运行截图 | 创建演示数据、搜索、编辑、设置、切换深色并截图；结束清理演示笔记 | PASS |
 
-测试源代码：[NotePadTestRunner.java](../src/androidTest/java/com/example/android/notepad/NotePadTestRunner.java)。不是模板 `2 + 2` 测试，也不是单纯模拟 Repository 返回值。
+测试源代码：[NotePadTestRunner.java](../src/androidTest/java/com/example/android/notepad/NotePadTestRunner.java)。测试使用真实 SQLite、Activity 和系统文档界面。
 
 ## 人工视觉检查
 
@@ -71,9 +71,9 @@ adb shell am instrument -w com.example.test.notepad.test/com.example.android.not
 
 ## 提交物与范围
 
-- [模块 README](../README.md)：逐项功能对照、运行方法、八步验收演示和界面截图。
+- [模块 README](../README.md)：功能对照、运行方法和界面截图。
 - [源码分析](SOURCE_ANALYSIS.md)：明确原项目版本、架构、复用位置及修改原因。
-- [安装包](../download/NotePad-debug.apk)：与上述构建产物逐字节一致；校验文件随附。使用课堂调试签名，无个人发布密钥。
-- 原始日志保留在本目录；编译缓存、SDK 本机路径、模拟器磁盘和上游 `.git` 没有纳入交付。
+- [安装包](../apk/NotePad-debug.apk)：校验文件随附，使用课堂调试签名。
+- 原始日志在本机保留；编译缓存、SDK 本机路径和模拟器磁盘不纳入版本管理。
 
 设备实测限 API 34，其他 Android 版本有最低 API 静态检查，未列为实机全覆盖。数据库迁移测试覆盖原项目的版本 2 表结构；不意味着能跨应用 ID 自动读取原应用私有库。批量恢复、云备份、媒体笔记等未选可选项不在完成声明中。

@@ -1,21 +1,17 @@
-*.iml
-.gradle
-/local.properties
-*.keystore
-/.idea/caches
-/.idea/libraries
-/.idea/modules.xml
-/.idea/workspace.xml
-/.idea/navEditor.xml
-/.idea/assetWizardSettings.xml
-.DS_Store
-/build
-/captures
-.externalNativeBuild
-.cxx
-local.properties
-
-# Local IDE state and generated output for every experiment
+# IDE and local environment
 .idea/
+*.iml
+local.properties
+.DS_Store
+
+# Build output and caches
+.gradle/
 .kotlin/
 **/build/
+.externalNativeBuild/
+.cxx/
+captures/
+
+# Signing keys
+*.keystore
+*.jks

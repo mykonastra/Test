@@ -2,9 +2,9 @@
 
 ## 来源与版本
 
-课程指定源码：[fjnu-cse/NotePad](https://github.com/fjnu-cse/NotePad)。本次通过 Git 实际获取并阅读的提交为 `9279eab943f50012dd299df3417259e3478c8364`，不是仅根据示意图重做一个无关应用。原始代码可通过[固定提交](https://github.com/fjnu-cse/NotePad/tree/9279eab943f50012dd299df3417259e3478c8364/app/src/main)查看。
+课程指定源码：[fjnu-cse/NotePad](https://github.com/fjnu-cse/NotePad)。使用版本为 `9279eab943f50012dd299df3417259e3478c8364`，原始代码见[固定提交](https://github.com/fjnu-cse/NotePad/tree/9279eab943f50012dd299df3417259e3478c8364/app/src/main)。
 
-参考文档中的解析博客未能通过网页工具读取；以下分析直接以该提交的源码为依据。SQLite 线程与参数化查询做法同时对照了 [Android 官方 SQLite 文档](https://developer.android.com/training/data-storage/sqlite)。
+以下分析以该版本源码为依据，SQLite 的线程与参数化查询参考 [Android 官方 SQLite 文档](https://developer.android.com/training/data-storage/sqlite)。
 
 ## 原程序的数据流
 

@@ -1,6 +1,6 @@
 # 实验三：Android 界面组件
 
-[返回仓库导航](../README.md) · [查看实验二](../experiment02/README.md)
+[返回仓库导航](../../README.md) · [查看实验二](../experiment02/README.md)
 
 本模块集中展示列表、对话框、菜单和多选交互，五项任务均从本模块首页进入。
 
@@ -26,7 +26,7 @@ Android Studio 打开仓库根目录，选择 `experiment03` 运行。命令在*
 adb shell am start -n com.example.test.experiment03/com.example.test.MainActivity
 ```
 
-桌面名称：**实验3 界面组件**。APK：`experiment03/build/outputs/apk/debug/experiment03-debug.apk`，可与实验二同时安装。
+桌面名称：**实验3 界面组件**。APK：`experiments/experiment03/build/outputs/apk/debug/experiment03-debug.apk`，可与实验二同时安装。
 
 ## 已有截图
 
@@ -44,9 +44,9 @@ adb shell am start -n com.example.test.experiment03/com.example.test.MainActivit
 | --- | --- |
 | <img src="screenshots/exp3_actionmode.png" width="280" alt="ActionMode" /> | <img src="screenshots/exp3_recyclerview.png" width="280" alt="RecyclerView" /> |
 
-## 实际实现范围
+## 实现说明
 
-- ListView 使用自定义 `BaseAdapter`，原首页的 `SimpleAdapter` 名称已修正。如果课程明确要求 SimpleAdapter，还需对照任务书核查。
-- 菜单实现为 OptionsMenu 和字体、颜色子菜单。保留的 `menu_context.xml` 尚未接入 Activity，不能算已完成上下文菜单。
+- ListView 使用自定义 `BaseAdapter` 绑定动物名称、图片与选中背景。
+- 菜单实现为 OptionsMenu 和字体、颜色子菜单；`menu_context.xml` 为未接入界面的备用资源。
 - AlertDialog 是本地界面演示，没有账户认证；ActionMode“分享”仅显示 Toast，没有调用系统分享。
-- 本次整理不扩展实验业务功能。上述人工检查步骤为待执行清单，实际验证范围见[整理记录](../docs/REORGANIZATION.md)。
+- 上表中的操作说明可用于逐项检查界面功能。

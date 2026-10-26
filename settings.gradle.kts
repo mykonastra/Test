@@ -30,3 +30,6 @@ dependencyResolutionManagement {
 
 rootProject.name = "AndroidCourseExperiments"
 include(":experiment02", ":experiment03", ":midterm-notepad")
+project(":experiment02").projectDir = file("experiments/experiment02")
+project(":experiment03").projectDir = file("experiments/experiment03")
+project(":midterm-notepad").projectDir = file("experiments/midterm-notepad")
