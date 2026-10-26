@@ -28,5 +28,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Test"
-include(":app")
+rootProject.name = "AndroidCourseExperiments"
+include(":experiment02", ":experiment03")
